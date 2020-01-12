@@ -1,1 +1,2 @@
-/CJC Advanced Midi Merger/bin
+# ignore binary files
+**/bin
