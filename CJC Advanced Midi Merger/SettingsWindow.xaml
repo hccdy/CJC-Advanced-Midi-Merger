@@ -1,0 +1,21 @@
+﻿<Window x:Class="CJC_Advanced_Midi_Merger.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mdfk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
+        mc:Ignorable="d"
+        Title="Settings" Height="200" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <CheckBox Content="Implace merge BPM to the first track" x:Name="ImpBpm" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Implace merge notes to a single track" x:Name="ImpMrg" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Remove all BPM events" x:Name="RemBpm" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Remove empty tracks" x:Name="RemEptt" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <DockPanel Height="24" LastChildFill="False" Margin="10,90,0,0" VerticalAlignment="Top">
+            <Label Content="Set offset (ticks)" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+            <mdfk:DecimalUpDown x:Name="offset" Value="0" Increment="1" Maximum="1000000000" Minimum="0" HorizontalAlignment="Left" Width="82" Height="24" VerticalAlignment="Top" DockPanel.Dock="Left" />
+        </DockPanel>
+        <Button Content="OK" Margin="10,0,10,10" Height="25" VerticalAlignment="Bottom" Click="okclick"/>
+    </Grid>
+</Window>

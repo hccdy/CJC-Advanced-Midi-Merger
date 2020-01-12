@@ -1,0 +1,23 @@
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Release\CJC Advanced Midi Merger.exe.config
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Release\CJC Advanced Midi Merger.exe
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Release\CJC Advanced Midi Merger.pdb
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.csprojAssemblyReference.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\MainWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\SaveWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\SettingsWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\App.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger_MarkupCompile.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger_MarkupCompile.lref
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\MainWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\SaveWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\SettingsWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.g.resources
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC_Advanced_Midi_Merger.Properties.Resources.resources
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.csproj.GenerateResource.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.exe
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.pdb
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\RenderWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\StartWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\RenderWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\StartWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.csproj.Fody.CopyLocal.cache

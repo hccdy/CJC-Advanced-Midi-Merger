@@ -1,0 +1,38 @@
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\CJC Advanced Midi Merger.exe.config
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\CJC Advanced Midi Merger.exe
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\CJC Advanced Midi Merger.pdb
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger.csprojAssemblyReference.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\MainWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\App.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger_MarkupCompile.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger_MarkupCompile.lref
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\MainWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger.g.resources
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC_Advanced_Midi_Merger.Properties.Resources.resources
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger.csproj.GenerateResource.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger.exe
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger.pdb
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\SettingsWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\SettingsWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\Xceed.Wpf.AvalonDock.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\Xceed.Wpf.Toolkit.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\CJC Advanced Midi Merger.csproj.CopyComplete
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\SaveWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\SaveWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\RenderWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\StartWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\RenderWindow.baml
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\StartWindow.baml
