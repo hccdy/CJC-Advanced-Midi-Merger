@@ -313,14 +313,14 @@ namespace CJC_Advanced_Midi_Merger
             }
             return ouf;
         }
-        public long ImplaceMerge(Groups grp, bool impmrg, long offst, bool rembpm)
+        public long ImplaceMerge(Groups grp, bool impmrg, long offst, bool rembpm, int trppq)
         {
             if (grp.file.EndsWith(".cjcamm"))
             {
                 long res = 0;
                 for(int i = 0; i < grp.ms.Count; i++)
                 {
-                    long x = ImplaceMerge(grp.ms[i], impmrg, offst + grp.ms[i].st.offst, rembpm || grp.ms[i].st.RemoveBpm);
+                    long x = ImplaceMerge(grp.ms[i], impmrg, offst + grp.ms[i].st.offst, rembpm || grp.ms[i].st.RemoveBpm, (trppq == 0 && grp.ms[i].st.TrsPpq) ? grp.ppq : trppq);
                     if (x > res)
                     {
                         res = x;
@@ -339,7 +339,8 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 int trkcnt = buff.ReadByte();
                 trkcnt = trkcnt * 256 + buff.ReadByte();
-                buff.ReadByte(); buff.ReadByte();
+                int ppq = buff.ReadByte();
+                ppq = ppq * 256 + buff.ReadByte();
                 for (int trk = 0; trk < trkcnt; trk++)
                 {
                     List<byte> ouf = new List<byte>();
@@ -388,7 +389,7 @@ namespace CJC_Advanced_Midi_Merger
                         hold[i] = 0;
                     }
                     long lsttm = -offst;
-                    long TM = 0;
+                    long TM = 0, TT = 0;
                     long readtime()
                     {
                         long tm = 0;
@@ -406,7 +407,15 @@ namespace CJC_Advanced_Midi_Merger
                     }
                     while (len > 0)
                     {
-                        TM += readtime();
+                        TT += readtime();
+                        if (trppq == 0)
+                        {
+                            TM = TT;
+                        }
+                        else
+                        {
+                            TM = TT * trppq / ppq;
+                        }
                         int cmd = buff.ReadByte();
                         len--;
                         if (cmd < 128)
@@ -655,7 +664,7 @@ namespace CJC_Advanced_Midi_Merger
                 return res;
             }
         }
-        public void WriteMidis(Groups grp, bool rembpm, bool impmrg, bool remept, long offst, bool ImpBpm)
+        public void WriteMidis(Groups grp, bool rembpm, bool impmrg, bool remept, long offst, bool ImpBpm, int trppq)
         {
             if (!impmrg && !ImpBpm)
             {
@@ -663,7 +672,7 @@ namespace CJC_Advanced_Midi_Merger
                 {
                     for(int i = 0; i < grp.ms.Count; i++)
                     {
-                        WriteMidis(grp.ms[i], rembpm || grp.ms[i].st.RemoveBpm, grp.ms[i].st.ImpMrg, remept || grp.ms[i].st.RemEpt, offst + grp.ms[i].st.offst, grp.ms[i].st.ImpBpm);
+                        WriteMidis(grp.ms[i], rembpm || grp.ms[i].st.RemoveBpm, grp.ms[i].st.ImpMrg, remept || grp.ms[i].st.RemEpt, offst + grp.ms[i].st.offst, grp.ms[i].st.ImpBpm, (trppq == 0 && grp.ms[i].st.TrsPpq) ? grp.ppq : trppq);
                     }
                 }
                 else
@@ -675,7 +684,8 @@ namespace CJC_Advanced_Midi_Merger
                     }
                     int trkcnt = buff.ReadByte();
                     trkcnt = trkcnt * 256 + buff.ReadByte();
-                    buff.ReadByte();buff.ReadByte();
+                    int ppq = buff.ReadByte();
+                    ppq = ppq * 256 + buff.ReadByte();
                     for(int trk = 0; trk < trkcnt; trk++)
                     {
                         bool empt = true;
@@ -725,7 +735,7 @@ namespace CJC_Advanced_Midi_Merger
                             hold[i] = 0;
                         }
                         long lsttm = -offst;
-                        long TM = 0;
+                        long TM = 0, TT = 0;
                         long readtime()
                         {
                             long tm = 0;
@@ -743,7 +753,15 @@ namespace CJC_Advanced_Midi_Merger
                         }
                         while (len > 0)
                         {
-                            TM += readtime();
+                            TT += readtime();
+                            if (trppq != 0)
+                            {
+                                TM = TT * trppq / ppq;
+                            }
+                            else
+                            {
+                                TM = TT;
+                            }
                             int cmd = buff.ReadByte();
                             len--;
                             if (cmd < 128)
@@ -942,7 +960,7 @@ namespace CJC_Advanced_Midi_Merger
             }
             else
             {
-                long tms = ImplaceMerge(grp, impmrg, offst, rembpm);
+                long tms = ImplaceMerge(grp, impmrg, offst, rembpm, trppq);
                 tmp2 = ImplaceTrks(tmp2, tmp3);
                 tmp = ImplaceTrks(tmp, tmp2);
                 if (tmp.Count > 0)
@@ -969,7 +987,7 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 if (!impmrg)
                 {
-                    WriteMidis(grp, true, false, remept, offst, false);
+                    WriteMidis(grp, true, false, remept, offst, false, trppq);
                 }
             }
         }
@@ -998,7 +1016,7 @@ namespace CJC_Advanced_Midi_Merger
             {
                 Progress.Text = "Processed 0/" + Convert.ToString(alltrk) + " tracks, written 0 tracks ...";
             }));
-            WriteMidis(gr, false, false, false, 0, false);
+            WriteMidis(gr, false, false, false, 0, false, 0);
             ous.Seek(10, SeekOrigin.Begin);
             ous.WriteByte((byte)(trks / 256));
             ous.WriteByte((byte)(trks % 256));

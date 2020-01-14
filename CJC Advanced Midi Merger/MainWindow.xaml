@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
         mc:Ignorable="d"
-        Title="Conjac Jelly Charlieyan's Advanced Midi Merger" Height="450" Width="800">
+        Title="Conjac Jelly Charlieyan's Advanced Midi Merger" Height="450" Width="800" MinHeight="300" MinWidth="90">
     <DockPanel LastChildFill="True" Margin="10,10,10,10">
         <Button Content="Add" Height="25" VerticalAlignment="Top" Width="75" Margin="0,0,0,0" Click="AddMidi"/>
         <Button Content="Remove" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,35,0,0" Click="RemoveMidi"/>

@@ -38,6 +38,7 @@ namespace CJC_Advanced_Midi_Merger
             public bool ImpBpm;
             public bool ImpMrg;
             public bool RemEpt;
+            public bool TrsPpq;
             public int offst;
             public int tmpo;
         }
@@ -175,6 +176,10 @@ namespace CJC_Advanced_Midi_Merger
                 {
                     go.Add((byte)'E');
                 }
+                if (st.TrsPpq)
+                {
+                    go.Add((byte)'P');
+                }
                 go.Add((byte)0);
             }
             gro.Write(go.ToArray(), 0, go.Count);
@@ -275,6 +280,10 @@ namespace CJC_Advanced_Midi_Merger
                     if (ch == 'E')
                     {
                         st.RemEpt = true;
+                    }
+                    if (ch == 'P')
+                    {
+                        st.TrsPpq = true;
                     }
                 }
                 itm.DataContext = st;

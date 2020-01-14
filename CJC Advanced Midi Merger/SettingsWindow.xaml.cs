@@ -45,6 +45,10 @@ namespace CJC_Advanced_Midi_Merger
             {
                 RemEptt.IsChecked = true;
             }
+            if (stt.TrsPpq)
+            {
+                trsppq.IsChecked = true;
+            }
             offset.Value = stt.offst;
         }
         public void okclick(object sender, RoutedEventArgs e)
@@ -53,6 +57,7 @@ namespace CJC_Advanced_Midi_Merger
             stt.ImpMrg = (bool)ImpMrg.IsChecked;
             stt.RemoveBpm = (bool)RemBpm.IsChecked;
             stt.RemEpt = (bool)RemEptt.IsChecked;
+            stt.TrsPpq = (bool)trsppq.IsChecked;
             stt.offst = (int)offset.Value;
             Close();
         }
