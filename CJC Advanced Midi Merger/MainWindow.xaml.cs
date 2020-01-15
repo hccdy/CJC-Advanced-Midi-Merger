@@ -85,6 +85,18 @@ namespace CJC_Advanced_Midi_Merger
             itm.DataContext = stss.stt;
             MidisAdded.SelectedItem = itm;
         }
+        public void GetInfo(object sender,RoutedEventArgs w)
+        {
+            if (MidisAdded.SelectedItem == null)
+            {
+                return;
+            }
+            InfoWindow inf = new InfoWindow();
+            inf.filename.Text = (string)((ListBoxItem)MidisAdded.SelectedItem).Content;
+            inf.ShowInTaskbar = false;
+            inf.Owner = this;
+            inf.ShowDialog();
+        }
         [STAThread]
         public void SaveGroup(object sender, RoutedEventArgs w)
         {

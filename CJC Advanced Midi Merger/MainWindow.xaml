@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
         mc:Ignorable="d"
-        Title="Conjac Jelly Charlieyan's Advanced Midi Merger" Height="450" Width="800" MinHeight="300" MinWidth="90">
+        Title="Conjac Jelly Charlieyan's Advanced Midi Merger" Height="500" Width="800" MinHeight="320" MinWidth="120">
     <DockPanel LastChildFill="True" Margin="10,10,10,10">
         <Button Content="Add" Height="25" VerticalAlignment="Top" Width="75" Margin="0,0,0,0" Click="AddMidi"/>
         <Button Content="Remove" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,35,0,0" Click="RemoveMidi"/>
         <Button Content="Clear" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,70,0,0" Click="ClearList"/>
         <Button Content="Settings" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,105,0,0" Click="OpenSettings"/>
-        <Button Content="Save Group" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,140,0,0" Click="SaveGroup"/>
-        <Button Content="Load Group" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,175,0,0" Click="LoadGroup"/>
-        <Button Content="Start!" Width="75" Margin="-75,210,0,0" Click="StartRender" x:Name="StartButton" IsEnabled="True"/>
+        <Button Content="Info" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,140,0,0" Click="GetInfo"/>
+        <Button Content="Save Group" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,175,0,0" Click="SaveGroup"/>
+        <Button Content="Load Group" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,210,0,0" Click="LoadGroup"/>
+        <Button Content="Start!" Width="75" Margin="-75,245,0,0" Click="StartRender" x:Name="StartButton" IsEnabled="True"/>
         <ListBox x:Name="MidisAdded" Margin="10,0,0,0" AllowDrop="True" DragOver="Dragovertolist" DragEnter="DragtoList" Drop="DroptoList"/>
     </DockPanel>
 </Window>

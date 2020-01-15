@@ -21,3 +21,5 @@ Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Mi
 Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\RenderWindow.baml
 Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\StartWindow.baml
 Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.csproj.Fody.CopyLocal.cache
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\InfoWindow.g.cs
+Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Release\InfoWindow.baml
