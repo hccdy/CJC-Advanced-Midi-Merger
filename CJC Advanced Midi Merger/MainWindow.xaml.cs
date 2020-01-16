@@ -344,6 +344,7 @@ namespace CJC_Advanced_Midi_Merger
                 int ppq = ins.ReadByte();
                 ppq = ppq * 256 + ins.ReadByte();
                 grp.ppq = ppq;
+                grp.st = new Sts();
             }
             else
             {
@@ -358,11 +359,12 @@ namespace CJC_Advanced_Midi_Merger
                 ins.ReadByte();
                 while (true)
                 {
-                    char ch = (char)ins.ReadByte();
-                    if (ch == -1)
+                    int CH = ins.ReadByte();
+                    if (CH == -1)
                     {
                         break;
                     }
+                    char ch = (char)CH;
                     string fn = "";
                     while (ch != 0)
                     {
@@ -393,6 +395,15 @@ namespace CJC_Advanced_Midi_Merger
                             }
                             ngr.st.offst = offst;
                         }
+                        if (ch == 'v')
+                        {
+                            ngr.st.minvol = ins.ReadByte();
+                            if (ngr.st.minvol == -1)
+                            {
+                                throw new Exception();
+                            }
+                            ngr.st.minvol++;
+                        }
                         if (ch == 'B')
                         {
                             ngr.st.ImpBpm = true;
@@ -404,6 +415,14 @@ namespace CJC_Advanced_Midi_Merger
                         if (ch == 'R')
                         {
                             ngr.st.RemoveBpm = true;
+                        }
+                        if (ch == 'E')
+                        {
+                            ngr.st.RemEpt = true;
+                        }
+                        if (ch == 'P')
+                        {
+                            ngr.st.TrsPpq = true;
                         }
                         ch = (char)ins.ReadByte();
                         if (ch == -1)
