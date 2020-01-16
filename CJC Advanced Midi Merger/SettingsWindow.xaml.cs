@@ -50,6 +50,7 @@ namespace CJC_Advanced_Midi_Merger
                 trsppq.IsChecked = true;
             }
             offset.Value = stt.offst;
+            minvol.Value = stt.minvol - 1;
         }
         public void okclick(object sender, RoutedEventArgs e)
         {
@@ -59,6 +60,7 @@ namespace CJC_Advanced_Midi_Merger
             stt.RemEpt = (bool)RemEptt.IsChecked;
             stt.TrsPpq = (bool)trsppq.IsChecked;
             stt.offst = (int)offset.Value;
+            stt.minvol = (int)minvol.Value + 1;
             Close();
         }
     }

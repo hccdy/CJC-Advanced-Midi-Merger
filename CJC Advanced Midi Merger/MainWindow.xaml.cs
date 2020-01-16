@@ -41,6 +41,7 @@ namespace CJC_Advanced_Midi_Merger
             public bool TrsPpq;
             public int offst;
             public int tmpo;
+            public int minvol;
         }
         public static int defppq;
         public void AddMidi(object sender, RoutedEventArgs e)
@@ -172,6 +173,11 @@ namespace CJC_Advanced_Midi_Merger
                     go.Add((byte)(st.offst / 256 % 256));
                     go.Add((byte)(st.offst % 256));
                 }
+                if (st.minvol > 0)
+                {
+                    go.Add((byte)'v');
+                    go.Add((byte)(st.minvol - 1));
+                }
                 if (st.RemoveBpm)
                 {
                     go.Add((byte)'R');
@@ -276,6 +282,17 @@ namespace CJC_Advanced_Midi_Merger
                             offst = offst * 256 + sh;
                         }
                         st.offst = offst;
+                    }
+                    if (ch == 'v')
+                    {
+                        st.minvol = gro.ReadByte();
+                        if (st.minvol == -1)
+                        {
+                            gro.Close();
+                            MessageBox.Show("This is not a valid CJCAMM group file!", "Invalid file", MessageBoxButton.OK);
+                            return;
+                        }
+                        st.minvol++;
                     }
                     if (ch == 'B')
                     {
