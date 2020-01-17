@@ -261,3 +261,5 @@ cleanup.bat
 
 bin
 */obj/*
+
+*/.DS_Store

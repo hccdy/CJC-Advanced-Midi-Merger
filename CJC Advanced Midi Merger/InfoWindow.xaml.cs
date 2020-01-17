@@ -21,11 +21,9 @@ namespace CJC_Advanced_Midi_Merger
     /// </summary>
     public partial class InfoWindow : Window
     {
-        bool thstarted;
         long nc = 0, tm = 0;
         public InfoWindow()
         {
-            thstarted = false;
             InitializeComponent();
         }
         public void GetInfo()
@@ -183,12 +181,13 @@ namespace CJC_Advanced_Midi_Merger
             }
             Dispatcher.Invoke(new Action(() =>
             {
+                notecnt.Text = nc.ToString("N0");
+                midilen.Text = tm.ToString("N0");
                 progress.Content = "Finished.";
             }));
         }
         public void GetInfoClicked(object sender, RoutedEventArgs e)
         {
-            thstarted = true;
             progress.IsEnabled = false;
             Thread th = new Thread(GetInfo);
             th.IsBackground = true;
