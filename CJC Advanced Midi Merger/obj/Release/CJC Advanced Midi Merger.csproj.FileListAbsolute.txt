@@ -48,3 +48,9 @@ W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\CJC
 W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.csproj.Fody.CopyLocal.cache
 W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.exe
 W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\CJC Advanced Midi Merger.pdb
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\App.baml
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\Resources\zh-cn.baml
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\Resources\en-us.baml
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\Resources\zh-hk.baml
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\Resources\vn-vi.baml
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Release\Resources\ja-jp.baml

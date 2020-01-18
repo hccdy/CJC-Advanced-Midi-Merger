@@ -55,7 +55,11 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    progress.Content = "Parsing track " + (trk + 1).ToString() + ", " + len.ToString("N0") + " bytes.";
+                    progress.SetResourceReference(ContentControl.ContentProperty, "Parsingtrack");
+                    string str = (string)progress.Content;
+                    str = str.Replace("{trackcount}", (trk + 1).ToString());
+                    str = str.Replace("{tracksize}", len.ToString("N0"));
+                    progress.Content = str;
                 }));
                 byte getbyte()
                 {
@@ -175,15 +179,15 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    notecnt.Text = nc.ToString("N0") + " (until track " + (trk + 1).ToString() + ")";
-                    midilen.Text = tm.ToString("N0") + " (until track " + (trk + 1).ToString() + ")";
+                    notecnt.Text = nc.ToString("N0");
+                    midilen.Text = tm.ToString("N0");
                 }));
             }
             Dispatcher.Invoke(new Action(() =>
             {
                 notecnt.Text = nc.ToString("N0");
                 midilen.Text = tm.ToString("N0");
-                progress.Content = "Finished.";
+                progress.SetResourceReference(ContentControl.ContentProperty, "Finished");
             }));
         }
         public void GetInfoClicked(object sender, RoutedEventArgs e)
@@ -209,8 +213,6 @@ namespace CJC_Advanced_Midi_Merger
                 int ppq = st.ReadByte();
                 ppq = ppq * 256 + st.ReadByte();
                 originalppq.Text = Convert.ToString(ppq);
-                notecnt.Text = "(Click \"Get more information\" below to get)";
-                midilen.Text = "(Click \"Get more information\" below to get)";
             }
             else
             {
@@ -224,7 +226,9 @@ namespace CJC_Advanced_Midi_Merger
                 ppq = ppq * 256 + st.ReadByte();
                 trkcnt.Text = Convert.ToString(ppq);
                 progress.IsEnabled = false;
-                progress.Content = "Unable to get more information on group files";
+                progress.SetResourceReference(ContentControl.ContentProperty, "UnableGroup");
+                notecnt.Text = "";
+                midilen.Text = "";
             }
             st.Seek(0, SeekOrigin.End);
             long en = st.Position;

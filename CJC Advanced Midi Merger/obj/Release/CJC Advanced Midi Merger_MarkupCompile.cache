@@ -10,11 +10,11 @@ none
 false
 TRACE
 W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\App.xaml
-6991022189
+11-1915906231
 
 10-1281772584
 19-1798775387
-InfoWindow.xaml;MainWindow.xaml;RenderWindow.xaml;SaveWindow.xaml;SettingsWindow.xaml;StartWindow.xaml;
+InfoWindow.xaml;MainWindow.xaml;Resources\en-us.xaml;RenderWindow.xaml;Resources\ja-jp.xaml;Resources\vn-vi.xaml;Resources\zh-cn.xaml;Resources\zh-hk.xaml;SaveWindow.xaml;SettingsWindow.xaml;StartWindow.xaml;
 
 False
 

@@ -49,6 +49,14 @@ namespace CJC_Advanced_Midi_Merger
             {
                 trsppq.IsChecked = true;
             }
+            if (stt.RemPB)
+            {
+                RemPB.IsChecked = true;
+            }
+            if (stt.RemPC)
+            {
+                RemPC.IsChecked = true;
+            }
             offset.Value = stt.offst;
             minvol.Value = stt.minvol - 1;
         }
@@ -59,6 +67,8 @@ namespace CJC_Advanced_Midi_Merger
             stt.RemoveBpm = (bool)RemBpm.IsChecked;
             stt.RemEpt = (bool)RemEptt.IsChecked;
             stt.TrsPpq = (bool)trsppq.IsChecked;
+            stt.RemPB = (bool)RemPB.IsChecked;
+            stt.RemPC = (bool)RemPC.IsChecked;
             stt.offst = (int)offset.Value;
             stt.minvol = (int)minvol.Value + 1;
             Close();

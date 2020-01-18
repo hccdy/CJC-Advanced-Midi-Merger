@@ -314,7 +314,7 @@ namespace CJC_Advanced_Midi_Merger
             }
             return ouf;
         }
-        public long ImplaceMerge(Groups grp, bool impmrg, long offst, bool rembpm, int trppq, int ppq, int minvol)
+        public long ImplaceMerge(Groups grp, bool impmrg, long offst, bool rembpm, int trppq, int ppq, int minvol, bool remb, bool remc)
         {
             if (grp.file.EndsWith(".cjcamm"))
             {
@@ -325,7 +325,7 @@ namespace CJC_Advanced_Midi_Merger
                 long res = 0;
                 for(int i = 0; i < grp.ms.Count; i++)
                 {
-                    long x = ImplaceMerge(grp.ms[i], impmrg, offst + grp.ms[i].st.offst, rembpm || grp.ms[i].st.RemoveBpm, (trppq == 0 && grp.ms[i].st.TrsPpq) ? grp.ppq : trppq, ppq, minvol < grp.ms[i].st.minvol ? grp.ms[i].st.minvol : minvol);
+                    long x = ImplaceMerge(grp.ms[i], impmrg, offst + grp.ms[i].st.offst, rembpm || grp.ms[i].st.RemoveBpm, (trppq == 0 && grp.ms[i].st.TrsPpq) ? grp.ppq : trppq, ppq, minvol < grp.ms[i].st.minvol ? grp.ms[i].st.minvol : minvol, remb || grp.ms[i].st.RemPB, remc || grp.ms[i].st.RemPC);
                     if (x > res)
                     {
                         res = x;
@@ -493,7 +493,21 @@ namespace CJC_Advanced_Midi_Merger
                                 getbyte(); getbyte();
                             }
                         }
-                        else if (cm == 0b11000000 || cm == 0b11010000 || cmd == 0b11110011)
+                        else if (cm == 0b11000000)
+                        {
+                            if (impmrg && !remc)
+                            {
+                                WriteTime(TM - lsttm);
+                                lsttm = TM;
+                                ouf.Add((byte)cmd);
+                                ouf.Add((byte)getbyte());
+                            }
+                            else
+                            {
+                                getbyte();
+                            }
+                        }
+                        else if (cm == 0b11010000 || cmd == 0b11110011)
                         {
                             if (impmrg)
                             {
@@ -507,7 +521,22 @@ namespace CJC_Advanced_Midi_Merger
                                 getbyte();
                             }
                         }
-                        else if (cm == 0b11100000 || cm == 0b10110000 || cmd == 0b11110010 || cm == 0b10100000)
+                        else if (cm == 0b11100000)
+                        {
+                            if (impmrg && !remb)
+                            {
+                                WriteTime(TM - lsttm);
+                                lsttm = TM;
+                                ouf.Add((byte)cmd);
+                                ouf.Add((byte)getbyte());
+                                ouf.Add((byte)getbyte());
+                            }
+                            else
+                            {
+                                getbyte(); getbyte();
+                            }
+                        }
+                        else if (cm == 0b10110000 || cmd == 0b11110010 || cm == 0b10100000)
                         {
                             if (impmrg)
                             {
@@ -683,14 +712,16 @@ namespace CJC_Advanced_Midi_Merger
                     trkp++;
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        Progress.Text = "Processed " + Convert.ToString(trkp) + "/" + Convert.ToString(alltrk) + " tracks, written " + Convert.ToString(trks) + " tracks ...";
+                        Progress.Text = (string)Progress.DataContext;
+                        Progress.Text = Progress.Text.Replace("{trks}", trkp.ToString() + "/" + alltrk.ToString());
+                        Progress.Text = Progress.Text.Replace("{wrtt}", trks.ToString());
                     }));
                 }
                 buff.Close();
                 return res;
             }
         }
-        public void WriteMidis(Groups grp, bool rembpm, bool impmrg, bool remept, long offst, bool ImpBpm, int trppq, int ppq, int minvol)
+        public void WriteMidis(Groups grp, bool rembpm, bool impmrg, bool remept, long offst, bool ImpBpm, int trppq, int ppq, int minvol, bool remb, bool remc)
         {
             if (!impmrg && !ImpBpm)
             {
@@ -702,7 +733,7 @@ namespace CJC_Advanced_Midi_Merger
                     }
                     for(int i = 0; i < grp.ms.Count; i++)
                     {
-                        WriteMidis(grp.ms[i], rembpm || grp.ms[i].st.RemoveBpm, grp.ms[i].st.ImpMrg, remept || grp.ms[i].st.RemEpt, offst + grp.ms[i].st.offst, grp.ms[i].st.ImpBpm, (trppq == 0 && grp.ms[i].st.TrsPpq) ? grp.ppq : trppq, ppq, minvol < grp.ms[i].st.minvol ? grp.ms[i].st.minvol : minvol);
+                        WriteMidis(grp.ms[i], rembpm || grp.ms[i].st.RemoveBpm, grp.ms[i].st.ImpMrg, remept || grp.ms[i].st.RemEpt, offst + grp.ms[i].st.offst, grp.ms[i].st.ImpBpm, (trppq == 0 && grp.ms[i].st.TrsPpq) ? grp.ppq : trppq, ppq, minvol < grp.ms[i].st.minvol ? grp.ms[i].st.minvol : minvol, remb || grp.ms[i].st.RemPB, remc || grp.ms[i].st.RemPC);
                     }
                 }
                 else
@@ -852,7 +883,21 @@ namespace CJC_Advanced_Midi_Merger
                                     getbyte();
                                 }
                             }
-                            else if (cm == 0b11000000 || cm == 0b11010000 || cmd == 0b11110011)
+                            else if (cm == 0b11000000)
+                            {
+                                if (!remc)
+                                {
+                                    WriteTime(TM - lsttm);
+                                    lsttm = TM;
+                                    ouf.Add((byte)cmd);
+                                    ouf.Add((byte)getbyte());
+                                }
+                                else
+                                {
+                                    getbyte();
+                                }
+                            }
+                            else if (cm == 0b11010000 || cmd == 0b11110011)
                             {
                                 WriteTime(TM - lsttm);
                                 lsttm = TM;
@@ -860,7 +905,22 @@ namespace CJC_Advanced_Midi_Merger
                                 ouf.Add((byte)getbyte());
                                 empt = false;
                             }
-                            else if (cm == 0b11100000 || cm == 0b10110000 || cmd == 0b11110010 || cm == 0b10100000)
+                            else if (cm == 0b11100000)
+                            {
+                                if (!remb)
+                                {
+                                    WriteTime(TM - lsttm);
+                                    lsttm = TM;
+                                    ouf.Add((byte)cmd);
+                                    ouf.Add((byte)getbyte());
+                                    ouf.Add((byte)getbyte());
+                                }
+                                else
+                                {
+                                    getbyte();getbyte();
+                                }
+                            }
+                            else if (cm == 0b10110000 || cmd == 0b11110010 || cm == 0b10100000)
                             {
                                 WriteTime(TM - lsttm);
                                 lsttm = TM;
@@ -1003,7 +1063,9 @@ namespace CJC_Advanced_Midi_Merger
                         }
                         Dispatcher.Invoke(new Action(() =>
                         {
-                            Progress.Text = "Processed " + Convert.ToString(trkp) + "/" + Convert.ToString(alltrk) + " tracks, written " + Convert.ToString(trks) + " tracks ...";
+                            Progress.Text = (string)Progress.DataContext;
+                            Progress.Text = Progress.Text.Replace("{trks}", trkp.ToString() + "/" + alltrk.ToString());
+                            Progress.Text = Progress.Text.Replace("{wrtt}", trks.ToString());
                         }));
                     }
                     buff.Close();
@@ -1011,7 +1073,7 @@ namespace CJC_Advanced_Midi_Merger
             }
             else
             {
-                long tms = ImplaceMerge(grp, impmrg, offst, rembpm, trppq, ppq, minvol);
+                long tms = ImplaceMerge(grp, impmrg, offst, rembpm, trppq, ppq, minvol, remb, remc);
                 tmp2 = ImplaceTrks(tmp2, tmp3);
                 tmp = ImplaceTrks(tmp, tmp2);
                 if (tmp.Count > 0)
@@ -1033,21 +1095,19 @@ namespace CJC_Advanced_Midi_Merger
                     tmp3 = new List<byte>();
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        Progress.Text = "Processed " + Convert.ToString(trkp) + "/" + Convert.ToString(alltrk) + " tracks, written " + Convert.ToString(trks) + " tracks ...";
+                        Progress.Text = (string)Progress.DataContext;
+                        Progress.Text = Progress.Text.Replace("{trks}", trkp.ToString() + "/" + alltrk.ToString());
+                        Progress.Text = Progress.Text.Replace("{wrtt}", trks.ToString());
                     }));
                 }
                 if (!impmrg)
                 {
-                    WriteMidis(grp, true, false, remept, offst, false, trppq, ppq, minvol);
+                    WriteMidis(grp, true, false, remept, offst, false, trppq, ppq, minvol, remb, remc);
                 }
             }
         }
         public void StartMerge()
         {
-            Dispatcher.Invoke(new Action(() =>
-            {
-                Progress.Text = "Writing MIDI head ...";
-            }));
             ous.WriteByte((byte)'M');
             ous.WriteByte((byte)'T');
             ous.WriteByte((byte)'h');
@@ -1065,9 +1125,11 @@ namespace CJC_Advanced_Midi_Merger
             trkcount(gr, false);
             Dispatcher.Invoke(new Action(() =>
             {
-                Progress.Text = "Processed 0/" + Convert.ToString(alltrk) + " tracks, written 0 tracks ...";
+                Progress.Text = (string)Progress.DataContext;
+                Progress.Text = Progress.Text.Replace("{trks}", "0/" + alltrk.ToString());
+                Progress.Text = Progress.Text.Replace("{wrtt}", "0");
             }));
-            WriteMidis(gr, false, false, false, 0, false, 0, gr.ppq, 0);
+            WriteMidis(gr, false, false, false, 0, false, 0, gr.ppq, 0, false, false);
             ous.Seek(10, SeekOrigin.Begin);
             ous.WriteByte((byte)(trks / 256));
             ous.WriteByte((byte)(trks % 256));

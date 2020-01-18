@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\en-us.xaml"/>
+                <ResourceDictionary Source="Resources\zh-cn.xaml"/>
+                <ResourceDictionary Source="Resources\zh-hk.xaml"/>
+                <ResourceDictionary Source="Resources\vn-vi.xaml"/>
+                <ResourceDictionary Source="Resources\ja-jp.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

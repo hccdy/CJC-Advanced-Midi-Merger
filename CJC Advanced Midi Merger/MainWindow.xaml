@@ -5,16 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
         mc:Ignorable="d"
-        Title="Conjac Jelly Charlieyan's Advanced Midi Merger" Height="500" Width="800" MinHeight="320" MinWidth="120">
+        Title="{DynamicResource CJCAMMtitle}" Height="500" Width="800" MinHeight="350" MinWidth="200">
     <DockPanel LastChildFill="True" Margin="10,10,10,10">
-        <Button Content="Add" Height="25" VerticalAlignment="Top" Width="75" Margin="0,0,0,0" Click="AddMidi"/>
-        <Button Content="Remove" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,35,0,0" Click="RemoveMidi"/>
-        <Button Content="Clear" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,70,0,0" Click="ClearList"/>
-        <Button Content="Settings" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,105,0,0" Click="OpenSettings"/>
-        <Button Content="Info" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,140,0,0" Click="GetInfo"/>
-        <Button Content="Save Group" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,175,0,0" Click="SaveGroup"/>
-        <Button Content="Load Group" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,210,0,0" Click="LoadGroup"/>
-        <Button Content="Start!" Width="75" Margin="-75,245,0,0" Click="StartRender" x:Name="StartButton" IsEnabled="True"/>
+        <Button Content="{DynamicResource Add}" Height="25" VerticalAlignment="Top" Width="75" Margin="0,0,0,0" Click="AddMidi"/>
+        <Button Content="{DynamicResource Remove}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,35,0,0" Click="RemoveMidi"/>
+        <Button Content="{DynamicResource Clear}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,70,0,0" Click="ClearList" DataContext="{DynamicResource clearwarn}" x:Name="Clearbutton"/>
+        <Button Content="{DynamicResource Settings}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,105,0,0" Click="OpenSettings"/>
+        <Button Content="{DynamicResource Info}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,140,0,0" Click="GetInfo"/>
+        <Button Content="{DynamicResource SaveGroup}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,175,0,0" Click="SaveGroup"/>
+        <Button Content="{DynamicResource LoadGroup}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,210,0,0" Click="LoadGroup"/>
+        <Button Content="{DynamicResource Start}" Width="75" Margin="-75,245,0,35" Click="StartRender" x:Name="StartButton" IsEnabled="True" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="Language" Margin="-75,0,0,0" Width="75" VerticalAlignment="Bottom" Height="25" SelectionChanged="Language_SelectionChanged">
+            <ComboBoxItem Content="English" Uid="en-us" IsSelected="True"/>
+            <ComboBoxItem Content="简体中文" Uid="zh-cn"/>
+            <!--Chinese samplified translated by 花抄抄大爷-->
+            <ComboBoxItem Content="繁體中文" Uid="zh-hk"/>
+            <!--Chinese tranditional translated by YMI Black Moon-->
+            <ComboBoxItem Content="日本語" Uid="ja-jp"/>
+            <!--Japanese translated by すず-->
+            <ComboBoxItem Content="Tiếng việt nam" Uid="vn-vi"/>
+            <!--Vietnamnese translated by Huy Dang Dinh and 杰里米-->
+        </ComboBox>
         <ListBox x:Name="MidisAdded" Margin="10,0,0,0" AllowDrop="True" DragOver="Dragovertolist" DragEnter="DragtoList" Drop="DroptoList"/>
     </DockPanel>
 </Window>

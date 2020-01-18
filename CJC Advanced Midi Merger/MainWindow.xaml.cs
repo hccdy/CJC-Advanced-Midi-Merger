@@ -39,6 +39,7 @@ namespace CJC_Advanced_Midi_Merger
             public bool ImpMrg;
             public bool RemEpt;
             public bool TrsPpq;
+            public bool RemPC, RemPB;
             public int offst;
             public int tmpo;
             public int minvol;
@@ -63,7 +64,7 @@ namespace CJC_Advanced_Midi_Merger
         }
         public void ClearList(object sender, RoutedEventArgs w)
         {
-            MessageBoxResult really = MessageBox.Show("Do you really want to clear the list?", "Clear?", MessageBoxButton.YesNo);
+            MessageBoxResult really = MessageBox.Show((string)Clearbutton.DataContext, (string)Clearbutton.Content, MessageBoxButton.YesNo);
             if (really.ToString() == "No")
             {
                 return;
@@ -198,6 +199,14 @@ namespace CJC_Advanced_Midi_Merger
                 {
                     go.Add((byte)'P');
                 }
+                if (st.RemPB)
+                {
+                    go.Add((byte)'W');
+                }
+                if (st.RemPC)
+                {
+                    go.Add((byte)'C');
+                }
                 go.Add((byte)0);
             }
             gro.Write(go.ToArray(), 0, go.Count);
@@ -314,6 +323,14 @@ namespace CJC_Advanced_Midi_Merger
                     {
                         st.TrsPpq = true;
                     }
+                    if (ch == 'W')
+                    {
+                        st.RemPB = true;
+                    }
+                    if (ch == 'C')
+                    {
+                        st.RemPC = true;
+                    }
                 }
                 itm.DataContext = st;
                 itms.Add(itm);
@@ -423,6 +440,14 @@ namespace CJC_Advanced_Midi_Merger
                         if (ch == 'P')
                         {
                             ngr.st.TrsPpq = true;
+                        }
+                        if (ch == 'W')
+                        {
+                            ngr.st.RemPB = true;
+                        }
+                        if (ch == 'C')
+                        {
+                            ngr.st.RemPC = true;
                         }
                         ch = (char)ins.ReadByte();
                         if (ch == -1)
@@ -568,6 +593,19 @@ namespace CJC_Advanced_Midi_Merger
             }
             e.Effects = DragDropEffects.Copy;
             e.Handled = true;
+        }
+
+        private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<ResourceDictionary> dictionaryList = new List<ResourceDictionary>();
+            foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
+            {
+                dictionaryList.Add(dictionary);
+            }
+            string requestedCulture = @"Resources\" + ((string)((ComboBoxItem)Language.SelectedItem).Uid) + ".xaml";
+            ResourceDictionary resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.Equals(requestedCulture));
+            Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
     }
 }

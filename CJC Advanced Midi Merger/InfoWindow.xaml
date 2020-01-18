@@ -5,32 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
         mc:Ignorable="d"
-        Title="Midi Information" Height="240" Width="400" ResizeMode="NoResize" Loaded="GetLessInfo">
+        Title="{DynamicResource InfoWindowtitle}" Height="250" Width="500" ResizeMode="NoResize" Loaded="GetLessInfo">
     <Grid>
         <DockPanel Margin="10,10,10,0" VerticalAlignment="Top">
-            <TextBlock Text="File Name: " Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Text="{DynamicResource Filename}" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <TextBlock x:Name="filename" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextTrimming="CharacterEllipsis"/>
         </DockPanel>
         <DockPanel Margin="10,35,0,0" VerticalAlignment="Top">
-            <TextBlock Text="File size (bytes): " Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Text="{DynamicResource Filesize}" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <TextBlock x:Name="filesize" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         </DockPanel>
         <DockPanel Margin="10,60,0,0" VerticalAlignment="Top">
-            <TextBlock Text="Track count: " Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="TCSTR"/>
+            <TextBlock Text="{DynamicResource Trkcnt}" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="TCSTR"/>
             <TextBlock x:Name="trkcnt" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         </DockPanel>
         <DockPanel Margin="10,85,0,0" VerticalAlignment="Top">
-            <TextBlock Text="Original PPQ: " Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="OPPQSTR"/>
+            <TextBlock Text="{DynamicResource OriginalPpq}" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="OPPQSTR"/>
             <TextBlock x:Name="originalppq" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         </DockPanel>
         <DockPanel Margin="10,110,0,0" VerticalAlignment="Top">
-            <TextBlock Text="Note count: " Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="NCSTR"/>
-            <TextBlock x:Name="notecnt" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Text="{DynamicResource Notecount}" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="NCSTR"/>
+            <TextBlock x:Name="notecnt" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{DynamicResource Clickgetinfo}"/>
         </DockPanel>
         <DockPanel Margin="10,135,0,0" VerticalAlignment="Top">
-            <TextBlock Text="Midi length (ticks): " Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="MLSTR"/>
-            <TextBlock x:Name="midilen" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Text="{DynamicResource Midilen}" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="MLSTR"/>
+            <TextBlock x:Name="midilen" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{DynamicResource Clickgetinfo}"/>
         </DockPanel>
-        <Button Content="Get more information" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="25" x:Name="progress" Click="GetInfoClicked"/>
+        <Button Content="{DynamicResource Getmoreinfo}" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="25" x:Name="progress" Click="GetInfoClicked"/>
     </Grid>
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\obj\Debug\
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\obj\Debug\
 CJC_Advanced_Midi_Merger
 none
 false
 DEBUG;TRACE
-Z:\SharedWithWindows\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\CJC Advanced Midi Merger\App.xaml
-51365682598
+W:\Myfiles\StaffOnly\VSprojs\CJCAMM_wpf\CJC Advanced Midi Merger\App.xaml
+11-1915906231
 
-101719804599
-18683726526
-MainWindow.xaml;RenderWindow.xaml;SaveWindow.xaml;SettingsWindow.xaml;StartWindow.xaml;
+11973387900
+19-1798775387
+InfoWindow.xaml;MainWindow.xaml;Resources\en-us.xaml;RenderWindow.xaml;Resources\ja-jp.xaml;Resources\vn-vi.xaml;Resources\zh-cn.xaml;Resources\zh-hk.xaml;SaveWindow.xaml;SettingsWindow.xaml;StartWindow.xaml;
 
-False
+True
 
